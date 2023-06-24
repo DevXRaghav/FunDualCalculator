@@ -1,0 +1,70 @@
+import 'dart:convert';
+import 'dart:io';
+
+void main() {
+  var message = Message();
+
+  print('welcome to Dual Calculator:)');
+  stdout.write('Please Enter your Name:');
+  var user_name = stdin.readLineSync();
+  print('Hello:> $user_name');
+
+  stdout.write('Please Enter Number1:');
+  double number1 = double.parse(stdin.readLineSync()!);
+
+  stdout.write('Please Enter Number2:');
+  double number2 = double.parse(stdin.readLineSync()!);
+
+  if (number1 == null) {
+    print("Invalid Input:( Please try again");
+  }
+  else if (number2 == null) {
+    print("Invalid Input:( Please try again");
+  }
+
+  var operators = ['+', '-', '/', '*', '%'];
+  print('Please select operator:-> $operators');
+  stdout.write('Enter Your Operator Here:');
+  var user_operator = stdin.readLineSync();
+
+  if (user_operator == '+') {
+    double sum = number1 + number2;
+    print(message);
+    print(sum);
+  }
+  else if (user_operator == '-') {
+    double subtraction = number1 - number2;
+    print(message);
+    print(subtraction);
+  }
+  else if (user_operator == '/') {
+    double division = number1 / number2;
+    print(message);
+    print(division);
+  }
+  else if (user_operator == '*') {
+    double multiplication = number1 * number2;
+    print(message);
+    print(multiplication);
+  }
+  else if (user_operator == '%') {
+    double percentage = number1 % number2;
+    print(message);
+    print('$percentage %');
+  }
+  else{
+    print('Invalid input :( Please try again.');
+  }
+
+}
+
+ class Message {
+   Message(){
+     print('Your Result is-:');
+ }
+}
+  
+  
+
+  
+
